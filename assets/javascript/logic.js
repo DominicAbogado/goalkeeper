@@ -23,80 +23,42 @@ var x = setInterval(function() {
     // If the count down is over, write some text 
     if (distance < 0) {
         clearInterval(x);
-        document.getElementById("demo").innerHTML = "EXPIRED";
+        document.getElementById("demo").innerHTML = "WORLD CUP ALREADY STARTED";
     }
 }, 1000);
-// 
 
 // ================================================================ //
 
-var data = {
-    "groupName":"Group A",
-
-    // Russia
-    "teamInfo":{
-        "flag":"flag",
-        "teamName":"Russia",
-        "aganest":{
-            "flag": ["flag", "flag", "flag"],
-            "teamName": ["Saudi Arabia", "Egypt", "Uruguay"],
-            "playingTim": ["Jun 14, 2018 11:00:00", "Jun 19, 2018 14:00:00", "Jun 25, 2018 10:00:00"]
-        }
-    },
-
-    // Saudi Arabia
-    "teamInfo":{
-        "flag":"flag",
-        "teamName":"Russia",
-        "aganest":{
-            "flag": ["flag", "flag", "flag"],
-            "teamName": ["Saudi Arabia", "Egypt", "Uruguay"],
-            "playingTim": ["Jun 14, 2018 11:00:00", "Jun 19, 2018 14:00:00", "Jun 25, 2018 10:00:00"]
-        }
-
-    // Egypt
-    },
-    "teamInfo":{
-        "flag":"flag",
-        "teamName":"Russia",
-        "aganest":{
-            "flag": ["flag", "flag", "flag"],
-            "teamName": ["Saudi Arabia", "Egypt", "Uruguay"],
-            "playingTim": ["Jun 14, 2018 11:00:00", "Jun 19, 2018 14:00:00", "Jun 25, 2018 10:00:00"]
-        }
-
-    // Uruguay
-    },
-    "teamInfo":{
-        "flag":"flag",
-        "teamName":"Russia",
-        "aganest":{
-            "flag": ["flag", "flag", "flag"],
-            "teamName": ["Saudi Arabia", "Egypt", "Uruguay"],
-            "playingTim": ["Jun 14, 2018 11:00:00", "Jun 19, 2018 14:00:00", "Jun 25, 2018 10:00:00"]
-        }
+var worldCup = {
+    groupName: "Group A", 
+    teamInfo: {
+        flag: "",
+        teamName: "Russia",
+        playAganest: {
+            flag: ["","",""],
+            teamName: ["Saudi Arabia", "Egypt", "Uruguay"],
+            playingTim: ["Jun 14, 2018 11:00:00", "Jun 19, 2018 14:00:00", "Jun 25, 2018 10:00:00"]
+        } 
     }
+}
 
-
+function desplay() {
+    var groupName = worldCup.groupName;
+    var teamName = worldCup.teamInfo.teamName;
+    var aganest = worldCup.teamInfo.playAganest.teamName;
+    var playingTim = worldCup.teamInfo.playAganest.playingTim;
+    $("#data").append("<h2>" + groupName + "</h2>");
+    $("#data").append("<ul>");
+for (var i = 0; i < aganest.length; i++) {
+    $("#data").append("<li>" + teamName + " VS " + aganest[i] + playingTim[i] + "</li>")
+}
+    $("#data").append("</ul>");
 }
 
 
-var abcd = [data.teamInfo.teamName + data.teamInfo.aganest.teamName[0] + data.teamInfo.aganest.playingTim[0], 
-            data.teamInfo.teamName + data.teamInfo.aganest.teamName[1] + data.teamInfo.aganest.playingTim[1],
-            data.teamInfo.teamName + data.teamInfo.aganest.teamName[2] + data.teamInfo.aganest.playingTim[2]
-            ];
-        $("#data").append(data.groupName + "<br>");
-    for (var i = 0; i < abcd.length; i++) {
-        $("#data").append(abcd[i] + "<br>");
-    }
-        
-
-console.log(data);
-
-
+desplay();
 
 /*
-GroupName, {flag, teamName, [flag, otherTeam, playingTim,]}
 
 Group A
     Egypt
@@ -145,4 +107,5 @@ Group H
     Japan
     Poland
     Senegal 
-    */
+
+*/
