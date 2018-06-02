@@ -7,15 +7,21 @@ $(document).ready(function() {
 
   // Youtube API Key AIzaSyArIT9S3sFiCuItne3n3aBYgObMvXnSQaA
 
-  $("#search-term").submit(function(event) {
+
+  //CLICK FUNCTION TO SHOW THE NEWS AND VIDEOS
+
+  //On click of team button, the 
+  $(".list-group").on("click", ".list-group-item-action", function() {
     event.preventDefault();
-    var searchTerm = $("#query").val();
+    var searchTerm = keyword + " world cup 2018";
     getRequest(searchTerm);
+    console.log(searchTerm);
   });
 
   function getRequest(searchTerm) {
     url = "https://www.googleapis.com/youtube/v3/search";
     var params = {
+      maxResults: 3,
       part: "snippet",
       key: "AIzaSyArIT9S3sFiCuItne3n3aBYgObMvXnSQaA",
       q: searchTerm
@@ -34,35 +40,38 @@ $(document).ready(function() {
       var thumbnail = value.snippet.thumbnails.default.url;
       html += "<p>" + title + "</p>";
       html += '<img src="' + thumbnail + '">';
-      html += '<a href=' +
-      "https://www.youtube.com/watch?v=" + value.id.videoId +
-      ">" +
-      "Click here for video" +
-      "</a>";
-      console.log(value)
+      html +=
+        "<a href=" +
+        "https://www.youtube.com/watch?v=" +
+        value.id.videoId +
+        ">" +
+        "Click here for video" +
+        "</a>";
+      console.log(value);
     });
 
-    $("#search-results").html(html);
+    $("#newsVideo").empty();
+    $("#newsVideo").html(html);
   }
 
   //Youtube API
-  function handleAPILoaded() {
-    $("#search-button").attr("disabled", false);
-  }
+  // function handleAPILoaded() {
+  //   $("#search-button").attr("disabled", false);
+  // }
 
-  // Search for a specified string.
-  function search() {
-    var q = $("#query").val();
-    var request = gapi.client.youtube.search.list({
-      q: q,
-      part: "snippet"
-    });
+  // // Search for a specified string.
+  // function search() {
+  //   var q = $("#query").val();
+  //   var request = gapi.client.youtube.search.list({
+  //     q: q,
+  //     part: "snippet"
+  //   });
 
-    request.execute(function(response) {
-      var str = JSON.stringify(response.result);
-      $("#search-container").html("<pre>" + str + "</pre>");
-    });
-  }
+  //   request.execute(function(response) {
+  //     var str = JSON.stringify(response.result);
+  //     $("#newsVideo").html("<pre>" + str + "</pre>");
+  //   });
+  // }
 
   function displayNews() {
     var url =
@@ -106,40 +115,8 @@ $(document).ready(function() {
     keyword = this.id;
     console.log(keyword);
     displayNews();
+    var searchTerm = keyword + " world cup 2018";
+    getRequest(searchTerm);
   });
 });
 
-//   function displayGifs() {
-//     $(".gifsAppearHere").empty();
-//     var show = $(this).attr("data-name");
-//     var queryURL =
-//       "https://api.giphy.com/v1/gifs/search?q=" +
-//       show +
-//       "&api_key=dc6zaTOxFJmzC&limit=" +
-//       limit;
-//     //AJAX
-//     $.ajax({
-//       url: queryURL,
-//       method: "GET"
-//     }).then(function(response) {
-//       var results = response.data;
-
-//       for (var i = 0; i < results.length; i++) {
-//         var gifDiv = $('<div class="myGifs">');
-
-//         var rating = results[i].rating;
-
-//         var rat = $('<div class="rating">').text("Rating: " + rating);
-
-//         var gifImage = $("<img>");
-//         gifImage.attr("src", results[i].images.fixed_height.url);
-
-//         gifDiv.append(gifImage);
-//         gifDiv.append(rat);
-
-//         $(".gifsAppearHere").append(gifDiv);
-//         console.log(results[i].images.fixed_height.url);
-//       }
-//     });
-//   }U
-("");

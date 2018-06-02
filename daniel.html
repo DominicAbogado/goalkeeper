@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Goal Keeper</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase.js"></script>
+</head>
+
+<body>
+    <div class="bg">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">GoalKeeper</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">History</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link aboutus" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link rules" href="#">Rules</a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
+        <main role="main" class="container">
+
+            <!-- Jumbotron -->
+            <div class="jumbotron">
+                <h3 class="text-center">Goalkeeper</h3>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-12">
+
+                    <p id="demo"></p>
+                    <div id="data"></div>
+
+                    <!-- Team Info in a modal instead?-->
+                    <div class="card card-primary">
+                        <div class="card-heading">
+                            <h3 class="card-title">
+                                <strong>Team</strong>
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div id="video"></div>
+                            <div id="map"></div>
+                            <div class="NewsInfo">
+                                <div id="news"></div>
+                                <div id="newsPic"></div>
+                                <div id="newsClip"></div>
+                                <div id="newsUrl"></div>
+                                <div id="newsVideo"></div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <!-- Search Teams  -->
+            <div class="row">
+                <table class="table">
+
+                </table>
+                <div class="col-lg-12">
+                    <div class="card card-primary">
+                        <div class="card-heading text-center">
+                            <h5 class="card-title">
+                                <strong>Search Teams</strong>
+                            </h5>
+
+                        </div>
+                    </div>
+                    <br>
+                    <div class="container-fluid bg-3">
+                        <div class="list-group">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <strong class="list-group-item list-group-item-action text-center">GROUP A</strong>
+                                    <div>
+                                        <img src=("./assets/images/Russia.png" alt="">
+                                        <button type="button" id="Russia" class="list-group-item list-group-item-action">Russia</button>
+                                    </div>
+                                    <button type="button" id="Saudi Arabia" class="list-group-item list-group-item-action">Saudi Arabia</button>
+                                    <button type="button" id="Egypt" class="list-group-item list-group-item-action">Egypt</button>
+                                    <button type="button" id="Uruguay" class="list-group-item list-group-item-action">Uruguay</button>
+                                </div>
+                                <div class="col-sm-3">
+                                    <strong class="list-group-item list-group-item-action text-center">GROUP B</strong>
+                                    <button type="button" id="Portugal" class="list-group-item list-group-item-action">Portugal</button>
+                                    <button type="button" id="Spain" class="list-group-item list-group-item-action">Spain</button>
+                                    <button type="button" id="Morocco" class="list-group-item list-group-item-action">Morocco</button>
+                                    <button type="button" id="Iran" class="list-group-item list-group-item-action">IR Iran</button>
+                                </div>
+                                <div class="col-sm-3">
+                                    <strong class="list-group-item list-group-item-action text-center">GROUP C</strong>
+                                    <button type="button" id="France" class="list-group-item list-group-item-action">France</button>
+                                    <button type="button" id="Australia" class="list-group-item list-group-item-action">Australia </button>
+                                    <button type="button" id="Peru" class="list-group-item list-group-item-action">Peru</button>
+                                    <button type="button" id="Denmark" class="list-group-item list-group-item-action">Denmark</button>
+                                </div>
+                                <div class="col-sm-3">
+                                    <strong class="list-group-item list-group-item-action text-center">GROUP D</strong>
+                                    <button type="button" id="Argentina" class="list-group-item list-group-item-action">Argentina</button>
+                                    <button type="button" id="Iceland" class="list-group-item list-group-item-action">Iceland</button>
+                                    <button type="button" id="Croatia" class="list-group-item list-group-item-action">Croatia</button>
+                                    <button type="button" id="Nigeria" class="list-group-item list-group-item-action">Nigeria</button>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <strong class="list-group-item list-group-item-action text-center">GROUP E</strong>
+                                    <button type="button" id="Brazil" class="list-group-item list-group-item-action">Brazil</button>
+                                    <button type="button" id="Swizerland" class="list-group-item list-group-item-action">Switzerland</button>
+                                    <button type="button" id="Costa Rica" class="list-group-item list-group-item-action">Costa Rica</button>
+                                    <button type="button" id="Serbia" class="list-group-item list-group-item-action">Serbia</button>
+                                </div>
+                                <div class="col-sm-3">
+                                    <strong class="list-group-item list-group-item-action text-center">GROUP F</strong>
+                                    <button type="button" id="Germany" class="list-group-item list-group-item-action">Germany</button>
+                                    <button type="button" id="Mexico" class="list-group-item list-group-item-action">Mexico </button>
+                                    <button type="button" id="Sweden" class="list-group-item list-group-item-action">Sweden</button>
+                                    <button type="button" id="Korea" class="list-group-item list-group-item-action">Korea Republic</button>
+                                </div>
+                                <div class="col-sm-3">
+                                    <strong class="list-group-item list-group-item-action text-center">GROUP G</strong>
+                                    <button type="button" id="Belgium" class="list-group-item list-group-item-action">Belgium</button>
+                                    <button type="button" id="Panama" class="list-group-item list-group-item-action">Panama</button>
+                                    <button type="button" id="Tunisia" class="list-group-item list-group-item-action">Tunisia</button>
+                                    <button type="button" id="England" class="list-group-item list-group-item-action">England</button>
+                                </div>
+                                <div class="col-sm-3">
+                                    <strong class="list-group-item list-group-item-action text-center">GROUP H</strong>
+                                    <button type="button" id="Poland" class="list-group-item list-group-item-action">Poland</button>
+                                    <button type="button" id="Senegal" class="list-group-item list-group-item-action">Senegal</button>
+                                    <button type="button" id="Colombia" class="list-group-item list-group-item-action">Colombia</button>
+                                    <button type="button" id="Japan" class="list-group-item list-group-item-action">Japan</button>
+                                </div>
+                            </div>
+                            <br>
+
+
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    </div>
+    </div>
+
+    <div class="card-body">
+
+        <!-- Entry Form for Trash Talk -->
+        <form>
+            <div class="form-group row">
+                <label for="message-input">Message</label>
+                <input class="form-control" id="message-input" type="text">
+            </div>
+            <button class="btn btn-primary" id="add-message-btn" type="submit">Submit</button>
+        </form>
+    </div>
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    <footer class="fixed-bottom bg-dark container-fluid text-center">
+        <p>Footer Text</p>
+    </footer>
+    </div>
+
+    <script src="yourPath/animatedModal.min.js"></script>
+    <script src='assets/javascript/test.js'></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="auth.js"></script>
+    <script src="search.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+
+</body>
+
+</html>
