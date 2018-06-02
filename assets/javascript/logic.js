@@ -38,6 +38,8 @@ $(document).ready(function() {
     $.each(entries, function(index, value) {
       var title = value.snippet.title;
       var thumbnail = value.snippet.thumbnails.default.url;
+      var vidLink =  "https://www.youtube.com/watch?v=" +
+      value.id.videoId
       html += "<p>" + title + "</p>";
       html += '<img src="' + thumbnail + '">';
       html +=
