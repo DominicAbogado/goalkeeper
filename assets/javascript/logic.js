@@ -98,7 +98,7 @@ $(document).ready(function() {
       $("#newsPic").append(
         "<img src=" +
           response.articles[0].urlToImage +
-          " style='width:auto;height:400px;'>"
+          " style='width:100%;'>"
       );
       $("#newsClip").append(response.articles[0].description);
       $("#newsUrl").append(
