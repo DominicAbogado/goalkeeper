@@ -18,3 +18,6 @@ footer {
     background-repeat: no-repeat;
     background-size: cover;
   }
+  iframe{
+      text-align: center;
+  }

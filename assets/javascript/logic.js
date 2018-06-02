@@ -21,7 +21,7 @@ $(document).ready(function() {
   function getRequest(searchTerm) {
     url = "https://www.googleapis.com/youtube/v3/search";
     var params = {
-      maxResults: 3,
+      maxResults: 4,
       part: "snippet",
       key: "AIzaSyArIT9S3sFiCuItne3n3aBYgObMvXnSQaA",
       q: searchTerm
@@ -38,18 +38,18 @@ $(document).ready(function() {
     $.each(entries, function(index, value) {
       var title = value.snippet.title;
       var thumbnail = value.snippet.thumbnails.default.url;
-      var vidLink =  "https://www.youtube.com/watch?v=" +
+      var vidLink =  "https://www.youtube.com/embed/" +
       value.id.videoId;
-      html += "<p>" + title + "</p>";
-      html += '<img src="' + thumbnail + '">';
       html +=
-        "<a href=" +
+        "<iframe width='auto' height='auto' src=" +
        vidLink +
         ">" +
-        "Click here for video" +
-        "</a>";
-      console.log(value);
+        "</iframe>";
     });
+
+    // <iframe width="420" height="315"
+// src="https://www.youtube.com/embed/tgbNymZ7vqY">
+// </iframe>
 
     $("#newsVideo").empty();
     $("#newsVideo").html(html);
@@ -98,7 +98,7 @@ $(document).ready(function() {
       $("#newsPic").append(
         "<img src=" +
           response.articles[0].urlToImage +
-          " style='width:auto;height:400px;'>"
+          " style='width:auto;height:auto;'>"
       );
       $("#newsClip").append(response.articles[0].description);
       $("#newsUrl").append(
