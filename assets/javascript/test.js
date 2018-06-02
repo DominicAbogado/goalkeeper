@@ -97,7 +97,7 @@ $(document).ready(function() {
       $("#newsPic").append(
         "<img src=" +
           response.articles[0].urlToImage +
-          " style='width:100%;'>"
+          " style='width:auto;height:400px;'>"
       );
       $("#newsClip").append(response.articles[0].description);
       $("#newsUrl").append(
@@ -119,3 +119,4 @@ $(document).ready(function() {
     getRequest(searchTerm);
   });
 });
+
