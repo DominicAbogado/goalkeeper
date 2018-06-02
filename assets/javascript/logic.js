@@ -47,10 +47,6 @@ $(document).ready(function() {
         "</iframe>";
     });
 
-    // <iframe width="420" height="315"
-// src="https://www.youtube.com/embed/tgbNymZ7vqY">
-// </iframe>
-
     $("#newsVideo").empty();
     $("#newsVideo").html(html);
   }
@@ -98,7 +94,7 @@ $(document).ready(function() {
       $("#newsPic").append(
         "<img src=" +
           response.articles[0].urlToImage +
-          " style='width:auto;height:auto;'>"
+          " style='width:100%;'>"
       );
       $("#newsClip").append(response.articles[0].description);
       $("#newsUrl").append(
