@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Goal Keeper | History</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/historystyle.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase.js"></script>
+</head>
+<body>
+
+
+ <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">GoalKeeper</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="./history.html">History
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link aboutus" href="./about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link rules" href="./rules.html">Rules</a>
+          </li>
+        </ul>
+      </div>
+  </nav>
+</header>
+
+
+
+
+<section class="hiTimeline">
+  <div class="hiContainer left">
+    <div class="hisContent">
+      <!--  -->
+      <h2>2014</h2>
+      <p>Winner is <b>Germany</b></p>
+      <p>Germany 1-0 Argentina</p>
+      <p>Host country: Brazil</p>
+    </div>
+  </div>
+  <div class="hiContainer right">
+    <div class="hisContent">
+      
+      <h2>2010</h2>
+      <p>Winner is <b>Spain</b></p>
+      <p>Spain 1-0 Holland</p>
+      <p>Host country: South Africa</p>
+    </div>
+  </div>
+  <div class="hiContainer left">
+    <div class="hisContent">
+      <!--     -->
+      <h2>2006</h2>
+      <p>Winner is <b>Italy</b></p>
+      <p>1-1, then Italy beat France 5-3 in penalties</p>
+      <p>Host country: Germany</p>
+    </div>
+  </div>
+  <div class="hiContainer right">
+    <div class="hisContent">
+      <!--       -->
+      <h2>2002</h2>
+      <p>Winner is <b>Brazil</b></p>
+      <p>Brazil 2-0 Germany</p>
+      <p>Host country: Japan / S. Korea</p>
+    </div>
+  </div>
+  <div class="hiContainer left">
+    <div class="hisContent">
+      <!--       -->
+      <h2>1998</h2>
+      <p>Winner is <b>France</b></p>
+      <p>France 3-0 Brazil</p>
+      <p>Host country: France</p>
+    </div>
+  </div>
+  <div class="hiContainer right">
+    <div class="hisContent">
+      <!--      -->
+      <h2>1994</h2>
+      <p>Winner is <b>Brazil</b></p>
+      <p>0-0, then Brazil defeated Italy 3-2 in penalties</p>
+      <p>Host country: USA</p>
+    </div>
+  </div>
+  <div class="hiContainer left">
+    <div class="hisContent">
+      <!--     -->
+      <h2>1990</h2>
+      <p>Winner is <b>Germany</b></p>
+      <p>Germany 1-0 Argentina</p>
+      <p>Host country: Italy</p>
+    </div>
+  </div>
+  <div class="hiContainer right">
+    <div class="hisContent">
+      <!--      -->
+      <h2>1986</h2>
+      <p>Winner is <b>Argentina</b></p>
+      <p>Argentina 3-2 Germany</p>
+      <p>Host country: Mexico</p>
+    </div>
+  </div>
+  <div class="hiContainer left">
+    <div class="hisContent">
+      <!--     -->
+      <h2>1982</h2>
+      <p>Winner is <b>Italy</b></p>
+      <p>Italy 3-1 Germany</p>
+      <p>Host country: Spain</p>
+    </div>
+  </div>
+  <div class="hiContainer right">
+    <div class="hisContent">
+      <!--     -->
+      <h2>1978</h2>
+      <p>Winner is <b>Argentina</b></p>
+      <p>Argentina 3-1 Holland</p>
+      <p>Host country: Argentina</p>
+    </div>
+  </div>
+  <div class="hiContainer left">
+    <div class="hisContent">
+      <!--     -->
+      <h2>1974</h2>
+      <p>Winner is <b>Germany</b></p>
+      <p>Germany 2-1 Holland</p>
+      <p>Host country: Germany</p>
+    </div>
+  </div>
+  <div class="hiContainer right">
+    <div class="hisContent">
+      <!--       -->
+      <h2>1970</h2>
+      <p>Winner is <b>Brazil</b></p>
+      <p>Brazil 4-1 Italy</p>
+      <p>Host country: Mexico</p>
+    </div>
+  </div>
+  <div class="hiContainer left">
+    <div class="hisContent">
+      <!--     -->
+      <h2>1966</h2>
+      <p>Winner is <b>England</b></p>
+      <p>England 4-2 Germany</p>
+      <p>Host country: England</p>
+    </div>
+  </div>
+  <div class="hiContainer right">
+    <div class="hisContent">
+      <!--      -->
+      <h2>1962</h2>
+      <p>Winner is <b>Brazil</b></p>
+      <p>Brazil 3-1 Czechoslovakia</p>
+      <p>Host country: Chile</p>
+    </div>
+  </div>
+  <div class="hiContainer left">
+    <div class="hisContent">
+      <!--       -->
+      <h2>1958</h2>
+      <p>Winner is <b>Brazil</b></p>
+      <p>Brazil 5-2 Sweden</p>
+      <p>Host country: Sweden</p>
+    </div>
+  </div>
+  <div class="hiContainer right">
+    <div class="hisContent">
+      <!--     -->
+      <h2>1954</h2>
+      <p>Winner is <b>Germany</b></p>
+      <p>Germany 3-2 Hungary</p>
+      <p>Host country: Switzerland</p>
+    </div>
+  </div>
+  <div class="hiContainer left">
+    <div class="hisContent">
+      <!--      -->
+      <h2>1950</h2>
+      <p>Winner is <b>Uruguay</b></p>
+      <p>Uruguay 2-1 Brazil</p>
+      <p>Host country: Brazil</p>
+    </div>
+  </div>
+  <div class="hiContainer right">
+    <div class="hisContent">
+      <!--   -->
+      <h2>1946</h2>
+      <p>not held: due to world war.</p>
+    </div>
+  </div>
+  <div class="hiContainer left">
+    <div class="hisContent">
+      <!--   -->
+      <h2>1942</h2>
+      <p>not held: due to world war.</p>
+    </div>
+  </div>
+  <div class="hiContainer right">
+    <div class="hisContent">
+      <!--      -->
+      <h2>1938</h2>
+      <p>Winner is <b>Italy</b></p>
+      <p>Italy 4-2 Hungary</p>
+      <p>Host country: France</p>
+    </div>
+  </div>
+  <div class="hiContainer left">
+    <div class="hisContent">
+      <!--     -->
+      <h2>1934</h2>
+      <p>Winner is <b>Italy</b></p>
+      <p>Italy 2-1 Czechoslovakia</p>
+      <p>Host country: Italy</p>
+    </div>
+  </div>
+  <div class="hiContainer right">
+    <div class="hisContent">
+      <!--     -->
+      <h2>1930</h2>
+      <p>Winner is <b>Uruguay</b></p>
+      <p>Uruguay 4-2 Argentina</p>
+      <p>Host country: Uruguay</p>
+    </div>
+  </div>
+</section>
+
+  
+  
+  <footer class="fixed-bottom bg-dark container-fluid text-center">
+    <p>&copy;Footer Text</p>
+  </footer>
+  
+<script src='assets/javascript/test.js'></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+  
+</body>
+
+</html>
