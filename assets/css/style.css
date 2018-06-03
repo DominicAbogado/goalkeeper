@@ -1,3 +1,6 @@
+div.row {
+  margin: 0;
+}
 footer {
     background-color: #f2f2f2;
     padding: 25px;
@@ -18,3 +21,52 @@ footer {
     background-repeat: no-repeat;
     background-size: cover;
   }
+  .list-group-item {
+    padding: 0;
+    }
+    
+    .list-group-item-action{
+      padding: 0;  
+    }
+    
+    .NewsInfo{
+      background-color: #f2f2f2;
+      padding: 10px;     
+    }
+
+    #newPic img {
+      width:100%;
+      height:100%;
+    }
+
+section {
+  text-align: center;
+  margin: auto;
+}
+
+section img {
+  width: 100%;
+}
+
+/* About us styling */
+.aboutCard {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin: 15px 0;
+}
+
+/* On mouse-over, add a deeper shadow */
+.aboutCard:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.aboutContainer {
+    padding: 2px 16px;
+}
+
+/* styling rules page*/
+#rules .col-md-8 {
+  margin: auto;
+}
