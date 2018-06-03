@@ -66,3 +66,7 @@ section img {
     padding: 2px 16px;
 }
 
+/* styling rules page*/
+#rules .col-md-8 {
+  margin: auto;
+}
