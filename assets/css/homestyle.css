@@ -18,9 +18,9 @@ body, html {
     /* Add a white text color to all elements inside the .homeBgimg container */
     color: white;
     /* Add a font */
-    font-family: "Courier New", Courier, monospace;
+    font-family: Arial, Helvetica, sans-serif;
     /* Set the font-size to 25 pixels */
-    font-size: 25px;
+    font-size: 40px;
 }
 
 /* Position text in the top-left corner */
@@ -44,12 +44,16 @@ body, html {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-*/}
+    font-family: 'Quicksand', sans-serif;
+}
 
 p#worldCupTime {
-    background: grey;
-    opacity: .8;
+    background: rgba(128, 128, 128, 0.185);
+    opacity: 5;
+    border: .5vw solid #FFF;
     padding: 5px;
+    font-size: 4vw;
+    font-family: 'Open Sans', sans-serif;
 }
 /* Style the <hr> element */
 hr {
