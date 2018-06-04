@@ -41,7 +41,7 @@ $(document).ready(function() {
       var vidLink =  "https://www.youtube.com/embed/" +
       value.id.videoId;
       html +=
-        "<iframe width='auto' height='auto' src=" +
+        "<iframe style='width:50%;' width='auto' height='auto' src=" +
        vidLink +
         ">" +
         "</iframe>";
