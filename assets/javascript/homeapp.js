@@ -28,6 +28,25 @@ var x = setInterval(function() {
   }
 }, 1000);
 
+$(document).ready(function () {
+  var count = 0;
+  var images = ["./assets/images/b2.jpg","./assets/images/background.jpg","./assets/images/b1.jpg"];
+  var bigImage = $(".homeBgimg");
+
+  bigImage.css("background-image","url("+images[count]+")");
+
+setInterval(function(){
+  bigImage.fadeOut(1000, function(){
+    bigImage.css("background-image","url("+images[count++]+")");
+    bigImage.fadeIn(1000);
+});
+if(count ==images.length)
+{
+  count = 0;
+}
+},3000);
+
+});
 
 // // Set the date we're counting down to
 // var countDownDate = new Date("Jun 14, 2018 11:00:00").getTime();
