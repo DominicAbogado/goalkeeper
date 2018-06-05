@@ -44,7 +44,7 @@ if(count ==images.length)
 {
   count = 0;
 }
-},3000);
+},2000);
 
 });
 
