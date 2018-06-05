@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Goal Keeper | Chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/historystyle.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans|Pacifico|Source+Code+Pro');
+        @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        #allcomments {
+            width: 90%;
+            margin: 1em 0 4em 1em;
+            padding: 1%;
+            border: solid 1px green;
+            border-radius: 3px;
+            box-shadow: 2px 2px 2px silver;
+        }
+
+        ul#pastcomments {
+            list-style-type: none;
+        }
+
+        ul#pastcomments li:before {
+            font-family: FontAwesome;
+            content: "\f086";
+            font-size: 24pt;
+            color: gray;
+            margin-left: -42px;
+            padding-right: 10px;
+            position: relative;
+            top: 8px;
+        }
+
+        ul#pastcomments li {
+            margin: 0 0 2em 0;
+            padding: 10px;
+        }
+
+        ul#pastcomments li span {
+            font-size: 80%;
+            color: gray;
+            font-style: italic;
+        }
+
+        form#newcomment textarea {
+            height: 72px;
+        }
+
+        form#newcomment label {
+            display: inline-block;
+            margin: 1em 0 0 0;
+        }
+
+        form#newcomment textarea,
+        form#newcomment input[type="text"] {
+            margin-top: 0;
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">GoalKeeper</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link aboutus" href="./about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link rules" href="./rules.html">Rules</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link chat" href="chat.html">Trash Talk
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    
+    <div class = "container">
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+        Launch Trash Talk
+    </button>
+    
+
+    <div class="modal" id="myModal" tabindex="-1" role="dialog" data-backdrop="false">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content modal-sm">
+                <div class="modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title w-100 font-weight-bold"> Trash Talk</h2>
+                </div>
+                <div class="modal-body">
+                    <div id="allcomments">
+                        <ul id="pastcomments"></ul>
+                        <form id="newcomment">
+                            <label for="tbName">Nick Name</label>
+                            <br>
+                            <input id="tbName" type="text" maxlength="20" required>
+                            <br>
+                            <label for="txComment">Your Comment</label>
+                            <br>
+                            <textarea id="txComment" maxlength="4096" required style="width:96%"></textarea>
+                            <br>
+                            <input type="submit" id="btnSubmitComment" value="Submit Comment">
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success btn-default pull-left" data-dismiss="modal">
+                            <span class="glyphicon glyphicon-remove"></span> Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+            $('#myModal').modal({
+                                keyboard: true,
+                                show: true
+                                });
+            </script>
+    
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-database.js"></script>
+
+    <script>
+        
+        var config = {
+            apiKey: "AIzaSyCf_5SOaB46fuE3GdrLSHG-zwMRCa1SGU8",
+            authDomain: "goalkeeper-test.firebaseapp.com",
+            databaseURL: "https://goalkeeper-test.firebaseio.com",
+            projectId: "goalkeeper-test",
+            storageBucket: "goalkeeper-test.appspot.com",
+            messagingSenderId: "29983913997"
+        };
+        firebase.initializeApp(config);
+        const rootRef = firebase.database().ref();
+        const commentsRef = rootRef.child('comments');
+        document.getElementById("btnSubmitComment").addEventListener("click", function () {
+            var newcomment = document.getElementById('txComment').value.replace(/\n/g, "<br>");
+            var newPostRef = commentsRef.push();
+            newPostRef.set({
+                name: document.getElementById('tbName').value.trim(),
+                comment: newcomment.trim(),
+                frompage: location.pathname,
+                when: firebase.database.ServerValue.TIMESTAMP
+            });
+        });
+
+        function showpastcomments() {
+            var showat = document.getElementById('pastcomments');
+            var commentsRef = firebase.database().ref('comments/').orderByChild('frompage').equalTo(location.pathname);
+            commentsRef.once('value', function (snapshot) {
+                snapshot.forEach(function (itemSnapshot) {
+                    var itemData = itemSnapshot.val();
+                    var comment = itemData.comment;
+                    var name = itemData.name;
+                    var when = new Date(itemData.when).toLocaleDateString("en-us");
+                    showat.innerHTML += "<li>" + comment + "<span> -- " + name + " (" + when +
+                        ")</span></li>";
+                })
+            })
+        }
+        showpastcomments()
+    </script>
+</body>
+
+</html>
