@@ -10,7 +10,7 @@
     crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase.js"></script>
+
 </head>
 
 <body>
@@ -38,6 +38,9 @@
           <li class="nav-item">
             <a class="nav-link rules" href="rules.html">Rules</a>
           </li>
+          <li class="nav-item">
+              <a class="nav-link chat" href="chat.html">Trash Talk</a>
+            </li>
         </ul>
 
       </div>
@@ -71,26 +74,38 @@
                 <br>
                 <div class="row">
                   <strong class="list-group-item list-group-item-action text-center">GROUP B</strong>
-                  <button type="button" id="Portugal" class="list-group-item list-group-item-action"><img src="./assets/images/Portugal.png" alt style="transform: scale(0.5,0.5);">Portugal</button>
-                  <button type="button" id="Spain" class="list-group-item list-group-item-action"><img src="./assets/images/Spain.png" alt style="transform: scale(0.5,0.5);">Spain</button>
-                  <button type="button" id="Morocco" class="list-group-item list-group-item-action"><img src="./assets/images/Morocco.png" alt style="transform: scale(0.5,0.5);">Morocco</button>
-                  <button type="button" id="Iran" class="list-group-item list-group-item-action"><img src="./assets/images/Iran.png" alt style="transform: scale(0.5,0.5);">Iran</button>
+                  <button type="button" id="Portugal" class="list-group-item list-group-item-action">
+                    <img src="./assets/images/Portugal.png" alt style="transform: scale(0.5,0.5);">Portugal</button>
+                  <button type="button" id="Spain" class="list-group-item list-group-item-action">
+                    <img src="./assets/images/Spain.png" alt style="transform: scale(0.5,0.5);">Spain</button>
+                  <button type="button" id="Morocco" class="list-group-item list-group-item-action">
+                    <img src="./assets/images/Morocco.png" alt style="transform: scale(0.5,0.5);">Morocco</button>
+                  <button type="button" id="Iran" class="list-group-item list-group-item-action">
+                    <img src="./assets/images/Iran.png" alt style="transform: scale(0.5,0.5);">Iran</button>
                 </div>
                 <br>
                 <div class="row">
                   <strong class="list-group-item list-group-item-action text-center">GROUP C</strong>
-                  <button type="button" id="France" class="list-group-item list-group-item-action"><img src="./assets/images/France.png" alt style="transform: scale(0.5,0.5);">France</button>
-                  <button type="button" id="Australia" class="list-group-item list-group-item-action"><img src="./assets/images/Australia.png" alt style="transform: scale(0.5,0.5);">Australia </button>
-                  <button type="button" id="Peru" class="list-group-item list-group-item-action"><img src="./assets/images/Peru.png" alt style="transform: scale(0.5,0.5);">Peru</button>
-                  <button type="button" id="Denmark" class="list-group-item list-group-item-action"><img src="./assets/images/Denmark.png" alt style="transform: scale(0.5,0.5);">Denmark</button>
+                  <button type="button" id="France" class="list-group-item list-group-item-action">
+                    <img src="./assets/images/France.png" alt style="transform: scale(0.5,0.5);">France</button>
+                  <button type="button" id="Australia" class="list-group-item list-group-item-action">
+                    <img src="./assets/images/Australia.png" alt style="transform: scale(0.5,0.5);">Australia </button>
+                  <button type="button" id="Peru" class="list-group-item list-group-item-action">
+                    <img src="./assets/images/Peru.png" alt style="transform: scale(0.5,0.5);">Peru</button>
+                  <button type="button" id="Denmark" class="list-group-item list-group-item-action">
+                    <img src="./assets/images/Denmark.png" alt style="transform: scale(0.5,0.5);">Denmark</button>
                 </div>
                 <br>
                 <div class="row">
                   <strong class="list-group-item list-group-item-action text-center">GROUP D</strong>
-                  <button type="button" id="Argentina" class="list-group-item list-group-item-action"><img src="./assets/images/Argentina.png" alt style="transform: scale(0.5,0.5);">Argentina</button>
-                  <button type="button" id="Iceland" class="list-group-item list-group-item-action"><img src="./assets/images/Iceland.png" alt style="transform: scale(0.5,0.5);">Iceland</button>
-                  <button type="button" id="Croatia" class="list-group-item list-group-item-action"><img src="./assets/images/Croatia.png" alt style="transform: scale(0.5,0.5);">Croatia</button>
-                  <button type="button" id="Nigeria" class="list-group-item list-group-item-action"><img src="./assets/images/Nigeria.png" alt style="transform: scale(0.5,0.5);">Nigeria</button>
+                  <button type="button" id="Argentina" class="list-group-item list-group-item-action">
+                    <img src="./assets/images/Argentina.png" alt style="transform: scale(0.5,0.5);">Argentina</button>
+                  <button type="button" id="Iceland" class="list-group-item list-group-item-action">
+                    <img src="./assets/images/Iceland.png" alt style="transform: scale(0.5,0.5);">Iceland</button>
+                  <button type="button" id="Croatia" class="list-group-item list-group-item-action">
+                    <img src="./assets/images/Croatia.png" alt style="transform: scale(0.5,0.5);">Croatia</button>
+                  <button type="button" id="Nigeria" class="list-group-item list-group-item-action">
+                    <img src="./assets/images/Nigeria.png" alt style="transform: scale(0.5,0.5);">Nigeria</button>
                 </div>
               </div>
             </div>
@@ -109,34 +124,50 @@
               <div class="list-group">
                 <div class="row">
                   <strong class="list-group-item list-group-item-action text-center">GROUP E</strong>
-                  <button type="button" id="Brazil" class="list-group-item list-group-item-action"><img src="./assets/images/Brazil.png" alt style="transform: scale(0.5,0.5);">Brazil</button>
-                  <button type="button" id="Switzerland" class="list-group-item list-group-item-action"><img src="./assets/images/Switzerland.png" alt style="transform: scale(0.5,0.5);">Switzerland</button>
-                  <button type="button" id="Costa Rica" class="list-group-item list-group-item-action"><img src="./assets/images/Costa Rica.png" alt style="transform: scale(0.5,0.5);">Costa Rica</button>
-                  <button type="button" id="Serbia" class="list-group-item list-group-item-action"><img src="./assets/images/Serbia.png" alt style="transform: scale(0.5,0.5);">Serbia</button>
+                  <button type="button" id="Brazil" class="list-group-item list-group-item-action">
+                    <img src="./assets/images/Brazil.png" alt style="transform: scale(0.5,0.5);">Brazil</button>
+                  <button type="button" id="Switzerland" class="list-group-item list-group-item-action">
+                    <img src="./assets/images/Switzerland.png" alt style="transform: scale(0.5,0.5);">Switzerland</button>
+                  <button type="button" id="Costa Rica" class="list-group-item list-group-item-action">
+                    <img src="./assets/images/Costa Rica.png" alt style="transform: scale(0.5,0.5);">Costa Rica</button>
+                  <button type="button" id="Serbia" class="list-group-item list-group-item-action">
+                    <img src="./assets/images/Serbia.png" alt style="transform: scale(0.5,0.5);">Serbia</button>
                 </div>
                 <br>
                 <div class="row">
                   <strong class="list-group-item list-group-item-action text-center">GROUP F</strong>
-                  <button type="button" id="Germany" class="list-group-item list-group-item-action"><img src="./assets/images/Germany.png" alt style="transform: scale(0.5,0.5);">Germany</button>
-                  <button type="button" id="Mexico" class="list-group-item list-group-item-action"><img src="./assets/images/Mexico.png" alt style="transform: scale(0.5,0.5);">Mexico </button>
-                  <button type="button" id="Sweden" class="list-group-item list-group-item-action"><img src="./assets/images/Sweden.png" alt style="transform: scale(0.5,0.5);">Sweden</button>
-                  <button type="button" id="Korea" class="list-group-item list-group-item-action"><img src="./assets/images/SouthKorea.png" alt style="transform: scale(0.5,0.5);">South Korea</button>
+                  <button type="button" id="Germany" class="list-group-item list-group-item-action">
+                    <img src="./assets/images/Germany.png" alt style="transform: scale(0.5,0.5);">Germany</button>
+                  <button type="button" id="Mexico" class="list-group-item list-group-item-action">
+                    <img src="./assets/images/Mexico.png" alt style="transform: scale(0.5,0.5);">Mexico </button>
+                  <button type="button" id="Sweden" class="list-group-item list-group-item-action">
+                    <img src="./assets/images/Sweden.png" alt style="transform: scale(0.5,0.5);">Sweden</button>
+                  <button type="button" id="Korea" class="list-group-item list-group-item-action">
+                    <img src="./assets/images/SouthKorea.png" alt style="transform: scale(0.5,0.5);">South Korea</button>
                 </div>
                 <br>
                 <div class="row">
                   <strong class="list-group-item list-group-item-action text-center">GROUP G</strong>
-                  <button type="button" id="Belgium" class="list-group-item list-group-item-action"><img src="./assets/images/Belgium.png" alt style="transform: scale(0.5,0.5);">Belgium</button>
-                  <button type="button" id="Panama" class="list-group-item list-group-item-action"><img src="./assets/images/Panama.png" alt style="transform: scale(0.5,0.5);">Panama</button>
-                  <button type="button" id="Tunisia" class="list-group-item list-group-item-action"><img src="./assets/images/Tunisia.png" alt style="transform: scale(0.5,0.5);">Tunisia</button>
-                  <button type="button" id="England" class="list-group-item list-group-item-action"><img src="./assets/images/England.png" alt style="transform: scale(0.5,0.5);">England</button>
+                  <button type="button" id="Belgium" class="list-group-item list-group-item-action">
+                    <img src="./assets/images/Belgium.png" alt style="transform: scale(0.5,0.5);">Belgium</button>
+                  <button type="button" id="Panama" class="list-group-item list-group-item-action">
+                    <img src="./assets/images/Panama.png" alt style="transform: scale(0.5,0.5);">Panama</button>
+                  <button type="button" id="Tunisia" class="list-group-item list-group-item-action">
+                    <img src="./assets/images/Tunisia.png" alt style="transform: scale(0.5,0.5);">Tunisia</button>
+                  <button type="button" id="England" class="list-group-item list-group-item-action">
+                    <img src="./assets/images/England.png" alt style="transform: scale(0.5,0.5);">England</button>
                 </div>
                 <br>
                 <div class="row">
                   <strong class="list-group-item list-group-item-action text-center">GROUP H</strong>
-                  <button type="button" id="Poland" class="list-group-item list-group-item-action"><img src="./assets/images/Poland.png" alt style="transform: scale(0.5,0.5);">Poland</button>
-                  <button type="button" id="Senegal" class="list-group-item list-group-item-action"><img src="./assets/images/Senegal.png" alt style="transform: scale(0.5,0.5);">Senegal</button>
-                  <button type="button" id="Colombia" class="list-group-item list-group-item-action"><img src="./assets/images/Colombia.png" alt style="transform: scale(0.5,0.5);">Colombia</button>
-                  <button type="button" id="Japan" class="list-group-item list-group-item-action"><img src="./assets/images/Japan.png" alt style="transform: scale(0.5,0.5);">Japan</button>
+                  <button type="button" id="Poland" class="list-group-item list-group-item-action">
+                    <img src="./assets/images/Poland.png" alt style="transform: scale(0.5,0.5);">Poland</button>
+                  <button type="button" id="Senegal" class="list-group-item list-group-item-action">
+                    <img src="./assets/images/Senegal.png" alt style="transform: scale(0.5,0.5);">Senegal</button>
+                  <button type="button" id="Colombia" class="list-group-item list-group-item-action">
+                    <img src="./assets/images/Colombia.png" alt style="transform: scale(0.5,0.5);">Colombia</button>
+                  <button type="button" id="Japan" class="list-group-item list-group-item-action">
+                    <img src="./assets/images/Japan.png" alt style="transform: scale(0.5,0.5);">Japan</button>
                 </div>
               </div>
             </div>
@@ -150,27 +181,24 @@
 
   <div class="card-body">
 
-    <!-- Entry Form for Trash Talk -->
-    <form>
-      <div class="form-group row">
-        <label for="message-input">Message</label>
-        <input class="form-control" id="message-input" type="text">
-      </div>
-      <button class="btn btn-primary" id="add-message-btn" type="submit">Submit</button>
-    </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <footer class="fixed-bottom bg-dark container-fluid text-center">
+      <p>GoalKeeper 2018</p>
+    </footer>
   </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <footer class="fixed-bottom bg-dark container-fluid text-center">
-    <p>GoalKeeper 2018</p>
-  </footer>
-  </div>
+
+
+
+
 
   <script src='assets/javascript/logic.js'></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
   <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+
+
 
 </body>
 
