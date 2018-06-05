@@ -8,7 +8,7 @@ footer {
   
   .jumbotron {
     height: 150px;
-    background-color: #f4511e;
+    background-color: #dd540f00;
     color: #ffffff;
   }
   
@@ -69,4 +69,9 @@ section img {
 /* styling rules page*/
 #rules .col-md-8 {
   margin: auto;
+}
+
+#worldCupTime{
+  text-align: center;
+  font: 4em sans-serif;
 }
